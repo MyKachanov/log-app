@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ConnectyCube from 'connectycube';
 import './signIn.sass'; 
+import User from '../user/userPage';
 
 const config = [
   {
@@ -45,6 +46,7 @@ class SignIn extends Component {
       if (user && !error) {
         that.setState({ success: true});
       }else {
+        alert("Вы ввели неправильный логин или пароль")
         that.setState({ success: false});
       }     
     })    
@@ -73,7 +75,7 @@ class SignIn extends Component {
             </div>
         </form>
         {         
-          (success)? alert(true): console.log(false)
+          (success)? <User />: console.log(false)
         }
       </div> 
     );
