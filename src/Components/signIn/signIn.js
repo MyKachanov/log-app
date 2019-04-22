@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ConnectyCube from 'connectycube';
 import './signIn.sass'; 
 import User from '../user/userPage';
@@ -16,12 +16,14 @@ const config = [
   }
 ];
 
-class SignIn extends Component {
+class SignIn extends Component { 
   state = {
     login: "",
     password: "",
     email: "",
-    success: ""
+    success: "",
+    pathIn: "",
+    id: "",
   }
   componentWillMount() {
     ConnectyCube.init(...config);
@@ -45,6 +47,8 @@ class SignIn extends Component {
     ConnectyCube.login(users, function(error, user) {
       if (user && !error) {
         that.setState({ success: true});
+        that.setState({id: user.id});
+        that.setState({email: user.email});
       }else {
         alert("Вы ввели неправильный логин или пароль")
         that.setState({ success: false});
@@ -53,31 +57,37 @@ class SignIn extends Component {
   }
 
   render() {
-    const {success} = this.state;
+    const {success, login, id, email} = this.state;
     return (
-      <div className="container">
-        <div className="title">
-            <h3>Kachanov.dev</h3>
-        </div>
-        <form>
-            <div className="input-wrapper">
-                <label>login</label>           
-                <input type="text" id="login" value={this.state.login} onChange={this.handleLogin} />
-            </div>
-            <div className="input-wrapper">
-                <label>Password</label>           
-                <input type="text" id="password" value={this.state.password} onChange={this.handlePassword} />
-            </div>
-            <div className="button-wrapper">
-                <div  className="SignUp">
-                <input type="submit" value="Submit" onClick={this.handleSubmit}/>
-                </div>       
-            </div>
-        </form>
+      <Fragment>
         {         
-          (success)? <User />: console.log(false)
+          (success)? 
+            <User login={login}
+                  id={id}
+                  email={email}
+            />:
+            <div className="container">
+              <div className="title">
+                <h3>Kachanov.dev</h3>
+            </div> 
+            <form>
+              <div className="input-wrapper">
+                  <label>login</label>           
+                  <input type="text" id="login" value={this.state.login} onChange={this.handleLogin} />
+              </div>
+              <div className="input-wrapper">
+                  <label>Password</label>           
+                  <input type="text" id="password" value={this.state.password} onChange={this.handlePassword} />
+              </div>
+              <div className="button-wrapper">
+                  <div  className="SignUp">
+                  <input type="submit" value="SignIn" onClick={this.handleSubmit}/>
+                  </div>       
+              </div>
+            </form>
+          </div>
         }
-      </div> 
+      </Fragment>
     );
   }
 }

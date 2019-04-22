@@ -53,7 +53,7 @@ class SignUp extends Component {
         }else{
           alert("Извините, такой Login уже существует");
         }
-    });
+    }); 
   }
 
   render() {
@@ -77,7 +77,7 @@ class SignUp extends Component {
             </div> 
             <div className="button-wrapper">
                 <div  className="SignUp">
-                  <input type="submit" value="Submit" onClick={this.handleSubmit}/>
+                  <input type="submit" value="SignUp" onClick={this.handleSubmit}/>
                 </div>       
             </div>
         </form>
