@@ -39,7 +39,7 @@ class SignUp extends Component {
   handleEmail = (event) => {
     this.setState({email: event.target.value});
   }
-
+  
   handleSubmit = (event) =>{
     event.preventDefault();
     let userProfile = {
@@ -50,6 +50,8 @@ class SignUp extends Component {
     ConnectyCube.users.signup(userProfile, function(error, user){
         if(user){
           alert("Вы успешно зарегистрировались");
+          var host = "http://"+window.location.hostname+":"+window.location.port;
+          window.location.assign(host);
         }else{
           alert("Извините, такой Login уже существует");
         }
