@@ -1,0 +1,53 @@
+$white: #ffffff
+$main-color: #0193fa
+.container
+    width: 330px
+    background-color: $main-color
+    margin: auto
+    border-radius: 10px
+    padding: 35px 0
+    .title
+        h3 
+            color: #fefefe
+            font-size: 30px
+            text-align: center
+    form
+        padding: 20px
+        width: auto
+        .input-wrapper
+            label, input
+                width: 100%
+                color: $white 
+            input
+                margin: 5px 0 25px 0  
+                padding: 5px 0    
+                background-color: $main-color
+                border: 1px solid $white
+                border-radius: 5px
+                font-size: 17px
+            label:hover 
+                cursor: pointer
+
+        .button-wrapper
+            display: block
+            .SignUp, .SignIn
+                input 
+                    width: 100px
+                    padding: 10px 0                   
+                    border-radius: 10px
+                    transition: all 0.3s
+                    font-size: 16px
+                input:hover 
+                    cursor: pointer
+            .SignUp, .SignIn
+                float: right
+                input 
+                    background-color: $main-color
+                    border: 1px solid $white 
+                    color: $white 
+                input:hover 
+                    background-color: $white
+                    border: 1px solid $main-color 
+                    color: $main-color                 
+            .SignIn
+                float: left
