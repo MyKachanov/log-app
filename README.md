@@ -18,23 +18,31 @@ You will also see any lint errors in the console.
 https://admin.connectycube.com
 
 Задача:
+
 ● Создать простое Web приложение с 3мя ‘экранами/блоками’:
 a. User Sign Up
 b. User Sign In
 c. Show user profile
+
 ● Базовый блок для отображения - User Sign Up - где юзер может ввести login,
 fullname, password и нажать кнопку Register для создания пользователя.
+
 ● После регистрации пользователя - показываем блок User Sign In - где юзер может
 ввести login, password и нажать кнопку LogIn.
+
 ● После LogIn - показываем 3й блок - профиль залогиненого пользователя.
 Технические детали работы с ConnectyCube бекенд:
 Entry point по работе с JS SDK ConnectyCube https://developers.connectycube.com/js/
+
 ● Первым делом необходимо подключить библиотеку
+
 ● Далее - выполнить инициализацию, используя credentials полученные выше
 https://developers.connectycube.com/js/?id=initialize
+
 ● Далее, перед любым использованием ConnectyCube API - создать сессию
 https://developers.connectycube.com/js/authentication-and-users?id=create-session-tok
 en
+
 ● Операции с пользователями:
 ○ Sign up
 https://developers.connectycube.com/js/authentication-and-users?id=user-signup
