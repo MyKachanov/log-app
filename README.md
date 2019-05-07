@@ -12,9 +12,11 @@ You will also see any lint errors in the console.
 Разработка JavaScript приложения по авторизации пользователя и отображению его профиля, с использованием бекенда ConnectyCube
 
 Предварительные действия:
+
 ● Зарегистрировать аккаунт в ConnectyCube Admin panel, создать приложение и
 сохранить credentials (app id, auth key, auth secret)
 https://admin.connectycube.com
+
 Задача:
 ● Создать простое Web приложение с 3мя ‘экранами/блоками’:
 a. User Sign Up
