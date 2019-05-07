@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import './userPage.sass';
 
 const UserPage = (props) => {
-  console.log(props);
   return(
     <Fragment>
           <div className="container">

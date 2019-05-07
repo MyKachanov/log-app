@@ -2,29 +2,17 @@ import React, { Component, Fragment } from 'react';
 import ConnectyCube from 'connectycube';
 import './signIn.sass'; 
 import User from '../user/userPage';
-
-const config = [
-  {
-    appId: 596,
-    authKey: 'DYrO3A7OayuesNR',
-    authSecret: 'Wpe9qGes6QfDbny'
-  },
-  {
-    debug: {
-      mode: 1
-    }
-  }
-];
+import config from '../connectycube-config';
 
 class SignIn extends Component { 
   state = {
     login: "",
     password: "",
     email: "",
-    success: "",
-    pathIn: "",
+    success: "",  
     id: "",
   }
+  
   componentWillMount() {
     ConnectyCube.init(...config);
     ConnectyCube.createSession((error, session) => {});
@@ -77,11 +65,11 @@ class SignIn extends Component {
               </div>
               <div className="input-wrapper">
                   <label>Password</label>           
-                  <input type="text" id="password" value={this.state.password} onChange={this.handlePassword} />
+                  <input type="password" id="password" value={this.state.password} onChange={this.handlePassword} />
               </div>
               <div className="button-wrapper">
                   <div  className="SignUp">
-                  <input type="submit" value="SignIn" onClick={this.handleSubmit}/>
+                  <input type="button" value="SignIn" onClick={this.handleSubmit}/>
                   </div>       
               </div>
             </form>

@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import ConnectyCube from 'connectycube';
 import './signup.sass';
-
-const config = [
-  {
-    appId: 596,
-    authKey: 'DYrO3A7OayuesNR',
-    authSecret: 'Wpe9qGes6QfDbny'
-  },
-  {
-    debug: {
-      mode: 1
-    }
-  }
-];
+import config from '../connectycube-config';
 
 class SignUp extends Component {
   state = {
@@ -21,6 +9,7 @@ class SignUp extends Component {
     password: "",
     email: ""
   }
+  
   componentWillMount() {
     ConnectyCube.init(...config);
     ConnectyCube.createSession((error, session) => {
@@ -71,15 +60,15 @@ class SignUp extends Component {
             </div>
             <div className="input-wrapper">
                 <label>Email</label>           
-                <input type="text" id="Password" value={this.state.email} onChange={this.handleEmail} />
+                <input type="email" id="Password" value={this.state.email} onChange={this.handleEmail} />
             </div>
             <div className="input-wrapper">
                 <label>Password</label>           
-                <input type="text" id="Fullname" value={this.state.password} onChange={this.handlePassword} />
+                <input type="password" id="Fullname" value={this.state.password} onChange={this.handlePassword} />
             </div> 
             <div className="button-wrapper">
                 <div  className="SignUp">
-                  <input type="submit" value="SignUp" onClick={this.handleSubmit}/>
+                  <input type="button" value="SignUp" onClick={this.handleSubmit}/>
                 </div>       
             </div>
         </form>
